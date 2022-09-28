@@ -1,4 +1,4 @@
-const CEHCK_STATUS = 'CEHCK_STATUS';
+const CEHCK_STATUS = 'bookstore/categories/CEHCK_STATUS';
 const initailState = [];
 
 export default function reducer(state = initailState, action) {
