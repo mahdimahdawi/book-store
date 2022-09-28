@@ -14,9 +14,9 @@ const Header = () => (
         Categories
       </Link>
     </div>
-    <div>
+    {/* <div>
       <img src="../images/profile.jpg" alt="Profile Icon" />
-    </div>
+    </div> */}
   </nav>
 );
 

@@ -52,7 +52,17 @@
   height: 200px;
   width: 500px;
   border-radius: 10px;
-  margin-top: 150px;
+  margin-top: 50px;
+ margin-left: 500px;
+  align-items: center;
+}
+
+.under-constraction {
+  font-size: 40px;
+  letter-spacing: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  color: #0290ff;
 }
 
 .add-book {
