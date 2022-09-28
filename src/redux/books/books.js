@@ -1,32 +1,32 @@
-import { v4 as uuid } from "uuid";
+import { v4 as uuid } from 'uuid';
 
-const ADD_BOOK = "bookstore/books/ADD_BOOK";
-const REMOVE_BOOK = "bookstore/books/REMOVE_BOOK";
-const EDIT_BOOK = "bookstore/books/EDIT_BOOK";
+const ADD_BOOK = 'bookstore/books/ADD_BOOK';
+const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
+const EDIT_BOOK = 'bookstore/books/EDIT_BOOK';
 const initailState = [
   {
-    id: uuid().split("-"),
-    title: "Street Accident",
-    author: "Jhon Lee",
-    action: "Story",
+    id: uuid().split('-'),
+    title: 'Street Accident',
+    author: 'Jhon Lee',
+    action: 'Story',
     completed: 30,
-    currentChap: "Cahpter 10",
+    currentChap: 'Cahpter 10',
   },
   {
-    id: uuid().split("-"),
-    title: "Night Human",
-    author: "Tracy proavo",
-    action: "novol",
+    id: uuid().split('-'),
+    title: 'Night Human',
+    author: 'Tracy proavo',
+    action: 'novol',
     completed: 10,
-    currentChap: "chapter 5",
+    currentChap: 'chapter 5',
   },
   {
-    id: uuid().split("-"),
-    title: "Computer Theory",
-    author: "Mark Zaker",
-    action: "technology",
+    id: uuid().split('-'),
+    title: 'Computer Theory',
+    author: 'Mark Zaker',
+    action: 'technology',
     completed: 22,
-    currentChap: "chapter 20",
+    currentChap: 'chapter 20',
   },
 ];
 
@@ -40,7 +40,7 @@ export default function reducer(state = initailState, action) {
           title: action.id,
           author: action.author,
           action: action.action,
-          completed: parseInt(action.completed),
+          completed: action.completed,
           currentChap: action.currentChap,
         },
       ];
@@ -52,17 +52,15 @@ export default function reducer(state = initailState, action) {
 }
 
 // Add Book Action
-export const addBook = (book) => {
-  return {
-    type: ADD_BOOK,
-    id: book.id,
-    title: book.title,
-    author: book.author,
-    action: book.action,
-    completed: book.completed,
-    currentChap: book.currentChap,
-  };
-};
+export const addBook = (book) => ({
+  type: ADD_BOOK,
+  id: book.id,
+  title: book.title,
+  author: book.author,
+  action: book.action,
+  completed: book.completed,
+  currentChap: book.currentChap,
+});
 
 // Remove Book Action
 export const removeBook = (id) => ({ type: REMOVE_BOOK, id });

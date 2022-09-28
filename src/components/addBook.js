@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
 import { v4 as uuid } from 'uuid';
 import { addBook } from '../redux/books/books';
 
@@ -23,34 +22,34 @@ const AddBook = () => {
       [event.target.name]: [event.target.value],
     });
   };
-  const handleSave = (event) => {
+  const handleSave = () => {
     if (book.title !== '' && book.author !== '') {
       dispatch(addBook(book));
       navigate('/');
     }
   };
   return (
-    <div className='add-book'>
+    <div className="add-book">
       <form>
         <input
-          type='text'
-          className='input'
-          name='title'
-          placeholder='Enter Book Title...'
+          type="text"
+          className="input"
+          name="title"
+          placeholder="Enter Book Title..."
           onChange={(event) => {
             handleEvent(event);
           }}
         />
         <input
-          type='text'
-          className='input'
-          name='author'
-          placeholder='Enter Book Author...'
+          type="text"
+          className="input"
+          name="author"
+          placeholder="Enter Book Author..."
           onChange={(event) => {
             handleEvent(event);
           }}
         />
-        <button type='button' className='submit-btn' onClick={handleSave}>
+        <button type="button" className="submit-btn" onClick={handleSave}>
           Add Book
         </button>
       </form>
