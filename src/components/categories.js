@@ -1,5 +1,5 @@
-import React from 'react';
 import { checkStatus } from '../redux/categories/categories';
+import React from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
