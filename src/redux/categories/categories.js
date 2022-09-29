@@ -1,16 +1,33 @@
-const CEHCK_STATUS = 'bookstore/categories/CEHCK_STATUS';
-const initailState = [];
+import { createSlice } from '@reduxjs/toolkit';
 
-export default function reducer(state = initailState, action) {
-  switch (action.type) {
-    case CEHCK_STATUS:
-      return 'Under construction';
-    default:
-      return state;
-  }
-}
+const initialState = [
+  { id: 0, category: 'technology' },
+  { id: 1, category: 'History' },
+  { id: 2, category: 'Bio Technology' },
+  { id: 3, category: 'science' },
+  { id: 4, category: 'story' },
+  { id: 5, category: 'roman' },
+  { id: 6, category: 'navol' },
+  { id: 7, category: 'psyclogy' },
+  { id: 8, category: 'humans behoivr' },
+  { id: 9, category: 'literature' },
+  { id: 10, category: 'civil engineering' },
+];
 
-// Check Status Action
-export function checkStatus() {
-  return { type: CEHCK_STATUS };
-}
+const catSlice = createSlice({
+  name: 'categories',
+  initialState,
+  reducers: {
+    CATEGORY: {
+      reducer(state, action) {
+        state.push(action.payload);
+      },
+    },
+  },
+});
+
+export const selectBookCategries = (state) => state.categories;
+
+export const { CATEGORY } = catSlice.actions;
+
+export default catSlice.reducer;
