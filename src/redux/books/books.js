@@ -7,7 +7,7 @@ const initialState = {
   status: 'idle',
   error: null,
 };
-const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/vRm8rPqJmNiNHQimOjpL/books'
+const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/vRm8rPqJmNiNHQimOjpL/books';
 
 const headers = {
   'Content-Type': 'application/json',
