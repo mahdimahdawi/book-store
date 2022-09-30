@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import './index.css';
-import Header from './components/header';
-import Books from './components/books';
-import Categories from './components/categories';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import Categories from './components/Categories';
 import store from './redux/configureStore';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -13,9 +13,9 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router>
-        <Header />
+        <Navbar />
         <Routes>
-          <Route path="/" element={<Books />} />
+          <Route path="/" element={<Home />} />
           <Route path="categories" element={<Categories />} />
         </Routes>
       </Router>
