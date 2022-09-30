@@ -43,7 +43,6 @@ export const removeBook = createAsyncThunk('books/removeBook', async (id) => {
       .catch((error) => {
         throw new Error(error);
       });
-
     return id;
   } catch (error) {
     throw new Error(error);

@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import ProgressBar from 'react-customizable-progressbar';
 import ReactLoading from 'react-loading';
-import removeBook from '../../redux/books/books'
+import { removeBook } from '../../redux/books/books'
 
 const DisplayBook = ({
   book: {

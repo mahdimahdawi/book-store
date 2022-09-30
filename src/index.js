@@ -5,7 +5,6 @@ import { Provider } from 'react-redux';
 import './index.css';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
-import AddBook from './components/AddBook';
 import Categories from './components/Categories';
 import store from './redux/configureStore';
 
@@ -17,7 +16,6 @@ root.render(
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="add-book" element={<AddBook />} />
           <Route path="categories" element={<Categories />} />
         </Routes>
       </Router>
