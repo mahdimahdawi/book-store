@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import './index.css';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Categories from './components/Categories';

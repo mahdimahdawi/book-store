@@ -4,10 +4,11 @@ import PropTypes from 'prop-types';
 import ProgressBar from 'react-customizable-progressbar';
 import ReactLoading from 'react-loading';
 import { removeBook } from '../../redux/books/books'
+import './style.css';
 
 const DisplayBook = ({
   book: {
-    id, title, category, author, completed, currentChapter,
+    id, title, category, author, completed=64, currentChapter= 'Chapter 3',
   },
 }) => {
   const dispatch = useDispatch();
@@ -40,7 +41,7 @@ const DisplayBook = ({
   };
 
   const renderContainer = () => (
-    <div className="container group">
+    <div className="list-item">
       <div className="left">
         <p className="category">{category}</p>
         <p className="title">{title}</p>
@@ -48,13 +49,13 @@ const DisplayBook = ({
         <br />
         <div className="bottom-buttons">
           <button type="button" className="buttons">Comments</button>
-          <span>&#124;</span>
+          <span className="line">&#124;</span>
           <button type="submit" className="buttons" onClick={() => handleDelete(id)}>Remove</button>
-          <span>&#124;</span>
+          <span className="line">&#124;</span>
           <button type="button" className="buttons">Edit</button>
         </div>
       </div>
-      <div className="middle">
+      <div className="center">
         <ProgressBar
           radius={30}
           progress={completed}
@@ -65,14 +66,20 @@ const DisplayBook = ({
           trackStrokeWidth={5}
         />
         <div className="indicator">
-          {completed === undefined ? 0 : completed}
-          % Completed
+          <div className="percentage-number">
+            {completed === undefined ? 0 : completed}
+          %
+          </div>
+          <div className="completed">
+           Completed
+          </div>
         </div>
       </div>
+      <div className='verticle-line'></div>
       <div className="right">
-        <p className="chapter-title">CURRENT CHAPTER</p>
-        <p className="chapter">{currentChapter}</p>
-        <button type="button" className="buttons">UPDATE PROGRESS</button>
+        <p className="chapter">CURRENT CHAPTER</p>
+        <p className="last-chapter">{currentChapter}</p>
+        <button type="button" className="update-btn">UPDATE PROGRESS</button>
       </div>
     </div>
   );
@@ -99,7 +106,7 @@ DisplayBook.propTypes = {
 
 DisplayBook.defaultProps = {
   book: {
-    id: '455f93831997',
+    id: '455f93831',
     title: 'Hunger Games',
     category: 'Action',
     author: 'Suzanne Collins',

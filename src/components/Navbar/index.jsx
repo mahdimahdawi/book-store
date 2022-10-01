@@ -1,33 +1,27 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import './style.css';
+import { MdPerson } from 'react-icons/md';
 
 const Navbar = () => (
-  <nav>
-    <div className="flex-start">
-      <div className="logo">
-        <NavLink to="/">
-          Bookstore CMS
-        </NavLink>
-      </div>
-      <ul className="nav-link">
-        <li className="nav-link-item-books">
-          <NavLink to="/">
+  <nav className="header">
+    <div className="logo-menu">
+      <div className="logo">Bookstore CMS</div>
+      <ul className="menu">
+        <li className="menu-item">
+          <NavLink to="/" className="item">
             BOOKS
           </NavLink>
         </li>
-        <li className="nav-link-item-categories">
-          <NavLink to="/categories">
+        <li className="menu-item">
+          <NavLink to="/categories" className="item">
             CATEGORIES
           </NavLink>
         </li>
       </ul>
     </div>
-    <div className="flex-end">
-      <div className="profile">
-        <span className="material-symbols-outlined">
-          person
-        </span>
-      </div>
+    <div className="profile">
+    <MdPerson />
     </div>
   </nav>
 );

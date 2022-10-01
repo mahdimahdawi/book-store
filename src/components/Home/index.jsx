@@ -10,6 +10,7 @@ import {
 } from '../../redux/books/books';
 import DisplayBook from '../DisplayBook';
 import { v4 as uuidv4 } from 'uuid';
+import './style.css';
 
 const Home = () => {
   const [bookList, setBookList] = useState([]);
@@ -63,10 +64,6 @@ const Home = () => {
     });
   };
 
-  const handleCancel = () => {
-    navigate("/");
-  };
-
   const handleSave = async () => {
     if (book.title !== "" && book.author !== "") {
       dispatch(addBook(book));
@@ -104,7 +101,7 @@ const Home = () => {
   };
 
   const renderHomeContainer = () => (
-    <div className="home-container">
+    <div className="home-page">
       <ul className="book-list">
         {bookList &&
           bookList.map((book) => (
@@ -114,54 +111,36 @@ const Home = () => {
           ))}
       </ul>
       <hr />
-      <form className="add-book-container">
-        <div className="form-title-container">
-          <h3>Add A Book</h3>
+      <form className="add-book-form">
+        <div className="add-book-title">
+          <h3>ADD NEW BOOK</h3>
         </div>
-        <div className="body-container">
-          <div className="title-container">
-            <label htmlFor="title">Title:</label>
+        <div className="input-fields">
+          <div className="book-title">
             <input
               type="text"
               id="title"
-              placeholder="Title"
+              placeholder="Book Title ..."
               value={book.title}
               name="title"
               onChange={(event) => handleChange(event)}
+              className="input"
             />
           </div>
-          <div className="author-container">
-            <label htmlFor="author">Author:</label>
+          <div className="book-author">
             <input
               type="text"
-              placeholder="Author"
+              placeholder="Book Author ..."
               value={book.author}
               id="author"
               name="author"
               onChange={(event) => handleChange(event)}
-            />
-          </div>
-          <div className="category-container">
-            <label htmlFor="category">Category:</label>
-            <input
-              type="text"
-              placeholder="Category"
-              value={book.category}
-              id="category"
-              name="category"
-              onChange={(event) => handleChange(event)}
+              className="input"
             />
           </div>
           <div className="button-container">
-            <button type="button" className="save-button" onClick={handleSave}>
-              Save
-            </button>
-            <button
-              type="button"
-              className="cancel-button"
-              onClick={handleCancel}
-            >
-              Cancel
+            <button type="button" className="add-book-btn" onClick={handleSave}>
+              ADD BOOK
             </button>
           </div>
         </div>
